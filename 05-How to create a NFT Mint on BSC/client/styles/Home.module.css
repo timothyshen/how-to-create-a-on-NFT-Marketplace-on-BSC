@@ -1,0 +1,28 @@
+.contentBody {
+  text-align: center;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  margin: auto;
+}
+.contentHeading {
+  padding: 20px;
+}
+
+.button {
+  padding: 10px;
+  margin: 10px;
+  background: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: white;
+  color: black;
+  border: 1px solid black;
+}
