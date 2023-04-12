@@ -5,16 +5,8 @@ import styles from "@/styles/Home.module.css";
 export default function Home() {
   const [connected, setConnected] = useState(false);
   const [provider, setProvider] = useState(null);
-  const [isHovering, setIsHovering] = useState(false);
   const [account, setAccount] = useState(null);
-
-  const handleMouseEnter = () => {
-    setIsHovering(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovering(false);
-  };
+  const [loading, setLoading] = useState(false);
 
   const handleConnectClick = async () => {
     try {
@@ -37,13 +29,13 @@ export default function Home() {
       // Initialize contract
       const contract = await initContract(provider);
       const accounts = await provider.eth.getAccounts();
-
+      setLoading(true);
       // Mint new NFT
       const mint = await contract.methods.safeMint(accounts[0]).send({
         from: accounts[0],
-        value: provider.utils.toWei("0.05", "ether"),
+        value: provider.utils.toWei("0.01", "ether"),
       });
-
+      setLoading(false);
       // Display success message
       if (mint) {
         const tokenURI = await contract.methods
@@ -84,7 +76,7 @@ export default function Home() {
             type="button"
             onClick={handleMintClick}
           >
-            Mint NFT
+            {loading ? "Minting..." : "Mint NFT"}
           </button>
         </div>
       )}

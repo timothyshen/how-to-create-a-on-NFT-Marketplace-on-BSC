@@ -12,7 +12,7 @@ contract NFTCollection is ERC721, ERC721Enumerable, Pausable, Ownable {
 
     Counters.Counter private _tokenIdCounter;
 
-    uint256 public MINT_PRICE = 0.05 ether;  //Change this value as per your requirement
+    uint256 public MINT_PRICE = 0.01 ether;  //Change this value as per your requirement
     uint public MAX_SUPPLY = 10;            //Change this value as per your requirement
 
     constructor() ERC721("NFTCollection", "MTK") {}

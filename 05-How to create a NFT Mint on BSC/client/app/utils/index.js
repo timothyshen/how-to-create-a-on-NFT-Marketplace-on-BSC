@@ -16,5 +16,8 @@ export const initWeb3 = async () => {
 };
 
 export const initContract = async (web3) => {
-  return new web3.eth.Contract(NFTCollection.abi, process.env.CONTRACTADDRESS);
+  return new web3.eth.Contract(
+    NFTCollection.abi,
+    process.env.NEXT_PUBLIC_CONTERACTADDRESS
+  );
 };
