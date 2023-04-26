@@ -402,13 +402,13 @@
     "absolutePath": "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol",
     "exportedSymbols": {
       "Address": [
-        2023
+        2148
       ],
       "Context": [
-        2045
+        2170
       ],
       "ERC165": [
-        2318
+        2443
       ],
       "ERC721": [
         1147
@@ -417,25 +417,25 @@
         1635
       ],
       "IERC165": [
-        2330
+        2455
       ],
       "IERC721": [
         1263
       ],
       "IERC721Enumerable": [
-        1666
+        1791
       ],
       "IERC721Metadata": [
-        1693
+        1818
       ],
       "IERC721Receiver": [
         1281
       ],
       "Math": [
-        3195
+        3320
       ],
       "Strings": [
-        2294
+        2419
       ]
     },
     "id": 1636,
@@ -472,7 +472,7 @@
         "nameLocation": "-1:-1:-1",
         "nodeType": "ImportDirective",
         "scope": 1636,
-        "sourceUnit": 1667,
+        "sourceUnit": 1792,
         "src": "177:33:5",
         "symbolAliases": [],
         "unitAlias": ""
@@ -497,7 +497,7 @@
               "id": 1289,
               "name": "IERC721Enumerable",
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 1666,
+              "referencedDeclaration": 1791,
               "src": "458:17:5"
             },
             "id": 1290,
@@ -518,13 +518,13 @@
         "id": 1635,
         "linearizedBaseContracts": [
           1635,
-          1666,
+          1791,
           1147,
-          1693,
+          1818,
           1263,
-          2318,
-          2330,
-          2045
+          2443,
+          2455,
+          2170
         ],
         "name": "ERC721Enumerable",
         "nameLocation": "430:16:5",
@@ -726,7 +726,7 @@
           {
             "baseFunctions": [
               314,
-              2329
+              2454
             ],
             "body": {
               "id": 1330,
@@ -776,10 +776,10 @@
                               "name": "IERC721Enumerable",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1666,
+                              "referencedDeclaration": 1791,
                               "src": "1150:17:5",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_type$_t_contract$_IERC721Enumerable_$1666_$",
+                                "typeIdentifier": "t_type$_t_contract$_IERC721Enumerable_$1791_$",
                                 "typeString": "type(contract IERC721Enumerable)"
                               }
                             }
@@ -787,7 +787,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_type$_t_contract$_IERC721Enumerable_$1666_$",
+                                "typeIdentifier": "t_type$_t_contract$_IERC721Enumerable_$1791_$",
                                 "typeString": "type(contract IERC721Enumerable)"
                               }
                             ],
@@ -813,7 +813,7 @@
                           "src": "1145:23:5",
                           "tryCall": false,
                           "typeDescriptions": {
-                            "typeIdentifier": "t_magic_meta_type_t_contract$_IERC721Enumerable_$1666",
+                            "typeIdentifier": "t_magic_meta_type_t_contract$_IERC721Enumerable_$1791",
                             "typeString": "type(contract IERC721Enumerable)"
                           }
                         },
@@ -936,7 +936,7 @@
                   "id": 1312,
                   "name": "IERC165",
                   "nodeType": "IdentifierPath",
-                  "referencedDeclaration": 2330,
+                  "referencedDeclaration": 2455,
                   "src": "1081:7:5"
                 },
                 {
@@ -1025,7 +1025,7 @@
           },
           {
             "baseFunctions": [
-              1657
+              1782
             ],
             "body": {
               "id": 1358,
@@ -1383,7 +1383,7 @@
           },
           {
             "baseFunctions": [
-              1647
+              1772
             ],
             "body": {
               "id": 1369,
@@ -1492,7 +1492,7 @@
           },
           {
             "baseFunctions": [
-              1665
+              1790
             ],
             "body": {
               "id": 1392,
@@ -4671,7 +4671,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.13",
-  "updatedAt": "2023-04-12T20:16:19.786Z",
+  "updatedAt": "2023-04-26T17:10:27.584Z",
   "devdoc": {
     "details": "This implements an optional extension of {ERC721} defined in the EIP that adds enumerability of all the token ids in the contract as well as all token ids owned by each account.",
     "kind": "dev",

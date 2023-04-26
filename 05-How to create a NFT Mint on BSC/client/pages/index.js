@@ -1,12 +1,15 @@
 import React, { useState, useCallback, useMemo } from "react";
 import { initContract, initWeb3 } from "@/app/utils";
 import styles from "@/styles/Home.module.css";
+import ImageUpload from "./components/imageUpload";
 
 export default function Home() {
   const [connected, setConnected] = useState(false);
   const [provider, setProvider] = useState(null);
   const [account, setAccount] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [hash, setHash] = useState(null);
+  const [success, setSuccess] = useState(true);
 
   const handleConnectClick = async () => {
     try {
@@ -31,11 +34,14 @@ export default function Home() {
       const accounts = await provider.eth.getAccounts();
       setLoading(true);
       // Mint new NFT
-      const mint = await contract.methods.safeMint(accounts[0]).send({
-        from: accounts[0],
-        value: provider.utils.toWei("0.01", "ether"),
-      });
+      const mint = await contract.methods
+        .safeMint(accounts[0], `https://ipfs.io/ipfs/${hash}`)
+        .send({
+          from: accounts[0],
+          value: provider.utils.toWei("0.01", "ether"),
+        });
       setLoading(false);
+      setSuccess(true);
       // Display success message
       if (mint) {
         const tokenURI = await contract.methods
@@ -47,6 +53,7 @@ export default function Home() {
       alert("NFT minted successfully!");
     } catch (error) {
       // Display error message
+      setLoading(false);
       alert(`Error minting NFT: ${error.message}`);
     }
   };
@@ -67,18 +74,34 @@ export default function Home() {
           </button>
         </div>
       ) : (
-        <div>
-          <h1 className={styles.contentHeading}>Mint a new NFT</h1>
-          <p>{`Current connected Address: ${account}`}</p>
+        <>
+          <ImageUpload setHash={setHash} />
+          <div>
+            <h1 className={styles.contentHeading}>Mint a new NFT</h1>
+            <p>{`Current connected Address: ${account}`}</p>
+            {hash && (
+              <div className="mt-5">
+                <p>Image uploaded successfully:</p>
+                <a
+                  href={`https://ipfs.io/ipfs/${hash}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline"
+                >
+                  {`https://ipfs.io/ipfs/${hash}`}
+                </a>
+              </div>
+            )}
 
-          <button
-            className={styles.button}
-            type="button"
-            onClick={handleMintClick}
-          >
-            {loading ? "Minting..." : "Mint NFT"}
-          </button>
-        </div>
+            <button
+              className={styles.button}
+              type="button"
+              onClick={handleMintClick}
+            >
+              {loading ? "Minting..." : "Mint NFT"}
+            </button>
+          </div>
+        </>
       )}
     </div>
   );
