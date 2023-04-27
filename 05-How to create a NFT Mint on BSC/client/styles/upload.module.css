@@ -1,0 +1,36 @@
+.container {
+  margin-left: auto;
+  margin-right: auto;
+
+  /* other container styles */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px;
+  /* other form styles */
+}
+
+.inputFile {
+  margin-bottom: 10px;
+  /* other input styles */
+}
+
+.inputSubmit {
+  padding: 10px;
+  margin: 10px;
+  background: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.inputSubmit:hover {
+  background: white;
+  color: black;
+  border: 1px solid black;
+}

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { create } from "ipfs-http-client";
+import style from "@/styles/upload.module.css";
 
 const auth = `Basic ${Buffer.from(
   `${process.env.NEXT_PUBLIC_INFURA_ID}:${process.env.NEXT_PUBLIC_INFURA_SECRET_KEY}`
@@ -35,21 +36,15 @@ const ImageUpload = ({ setHash }) => {
   };
 
   return (
-    <div className="container mx-auto">
-      <form
-        onSubmit={handleSubmit}
-        className="flex flex-col items-center mt-10"
-      >
+    <div className={style.container}>
+      <form onSubmit={handleSubmit} className={style.form}>
         <input
           type="file"
           accept="image/*"
           onChange={handleChange}
-          className="mb-5"
+          className={style.inputFile}
         />
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded"
-        >
+        <button type="submit" className={style.inputSubmit}>
           Upload Image
         </button>
       </form>

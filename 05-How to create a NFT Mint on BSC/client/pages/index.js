@@ -75,31 +75,22 @@ export default function Home() {
         </div>
       ) : (
         <>
-          <ImageUpload setHash={setHash} />
           <div>
             <h1 className={styles.contentHeading}>Mint a new NFT</h1>
-            <p>{`Current connected Address: ${account}`}</p>
+            <p>
+              First upload your image and then press the Mint NFT button to mint
+              your own NFT
+            </p>
+            <ImageUpload setHash={setHash} />
             {hash && (
-              <div className="mt-5">
-                <p>Image uploaded successfully:</p>
-                <a
-                  href={`https://ipfs.io/ipfs/${hash}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 underline"
-                >
-                  {`https://ipfs.io/ipfs/${hash}`}
-                </a>
-              </div>
+              <button
+                className={styles.button}
+                type="button"
+                onClick={handleMintClick}
+              >
+                {loading ? "Minting..." : "Mint NFT"}
+              </button>
             )}
-
-            <button
-              className={styles.button}
-              type="button"
-              onClick={handleMintClick}
-            >
-              {loading ? "Minting..." : "Mint NFT"}
-            </button>
           </div>
         </>
       )}
